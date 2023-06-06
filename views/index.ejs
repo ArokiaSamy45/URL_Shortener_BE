@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1,h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+   
+</head>
+<body>
+    <h1>Password Reset</h1>
+    <h2><%= email%></h2>
+    <form action="" method="post" onsubmit="validatePasswords(event)">
+        <input type="password" name="password" id="password" class="pswd1" placeholder="Password" /> <br />
+        <input type="password" name="confirm-password" id="confirm-password" class="pswd2" placeholder="Confirm Password" /> <br />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+        function validatePasswords(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password === confirmPassword) {
+                // Passwords match, redirect to the sign-in page
+                window.location.href = "http://localhost:3000/sign-in";
+            } else {
+                // Passwords do not match, display an alert
+                alert("Passwords do not match. Please try again.");
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= email%></h1>
+    <form action"" method="post">
+        <input type="password" name="password" id="password" placeholder="Password" /> <br />
+        <input
+            type="password"
+            name="confirm-Password"
+            id="confirm-password" 
+            placeholder="Confirm Password"
+            /> <br />
+            <input type="submit" value="submit" />
+    </form>
+</body>
+</html> -->
